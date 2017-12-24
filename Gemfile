@@ -66,4 +66,4 @@ gem 'neat', '~> 2.1'
 gem 'refills', group: [:development, :test]
 
 gem 'gibbon'
-gem 'devise'
+gem 'devise_token_auth'
