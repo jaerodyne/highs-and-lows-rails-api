@@ -11,6 +11,7 @@ require "sprockets/railtie"
 Bundler.require(*Rails.groups)
 module HighsAndLowsRails
   class Application < Rails::Application
+    config.api_only = true
     config.assets.quiet = true
     config.generators do |generate|
       generate.helper false
