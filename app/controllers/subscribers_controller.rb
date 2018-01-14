@@ -17,6 +17,8 @@ class SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.new(subscriber_params)
 
+    SubscriberMailer.sample_email(@subscriber).deliver
+
     if @subscriber.save
       render json: @subscriber, status: :created, location: @subscriber
     else

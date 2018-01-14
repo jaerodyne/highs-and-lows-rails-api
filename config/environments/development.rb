@@ -17,7 +17,7 @@ Rails.application.configure do
     Bullet.bullet_logger = true
     Bullet.rails_logger = true
   end
-  config.action_mailer.delivery_method = :file
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_caching = false
   config.active_support.deprecation = :log
   config.active_record.migration_error = :page_load
@@ -27,4 +27,14 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.default_url_options = { host: "localhost:3000" }
   config.action_mailer.asset_host = { host: "localhost:3000" }
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.gmail.com",
+   :domain               => "gmail.com",
+   :port                 => 587,
+   :user_name            => ENV['GMAIL_USERNAME'],
+   :password             => ENV['GMAIL_PASSWORD'],
+   :authentication       => "plain",
+  :enable_starttls_auto => true
+  }
+  config.action_mailer.perform_deliveries = true
 end
