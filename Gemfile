@@ -65,5 +65,5 @@ gem 'bourbon', '~> 5.0.0.beta.8'
 gem 'neat', '~> 2.1'
 gem 'refills', group: [:development, :test]
 
-gem 'gibbon'
 gem 'devise_token_auth'
+gem 'rack-cors'

@@ -1,7 +1,8 @@
 class SubscribersController < ApplicationController
   before_action :set_subscriber, only: [:show, :update, :destroy]
   protect_from_forgery with: :null_session, if: Proc.new {|c| c.request.format.json? }
-    
+  skip_before_action :verify_authenticity_token
+
   # GET /subscribers
   def index
     @subscribers = Subscriber.all
