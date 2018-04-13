@@ -27,14 +27,23 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.default_url_options = { host: "localhost:3000" }
   config.action_mailer.asset_host = { host: "localhost:3000" }
+  # config.action_mailer.smtp_settings = {
+  #  :address              => "smtp.gmail.com",
+  #  :domain               => "highsandlows.us",
+  #  :port                 => 587,
+  #  :user_name            => ENV['GMAIL_USERNAME'],
+  #  :password             => ENV['GMAIL_PASSWORD'],
+  #  :authentication       => "plain",
+  # :enable_starttls_auto => true
+  # }
   config.action_mailer.smtp_settings = {
-   :address              => "smtp.gmail.com",
-   :domain               => "highsandlows.us",
-   :port                 => 587,
-   :user_name            => ENV['GMAIL_USERNAME'],
-   :password             => ENV['GMAIL_PASSWORD'],
-   :authentication       => "plain",
-  :enable_starttls_auto => true
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password  => ENV['SENDGRID_PASSWORD'],
+    :domain    => 'highsandlows.us',
+    :address   => 'smtp.sendgrid.net',
+    :port      => 587,
+    :authentication => :login,
+    :enable_starttls_auto => true
   }
   config.action_mailer.perform_deliveries = true
 end
