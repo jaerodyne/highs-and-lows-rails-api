@@ -56,6 +56,6 @@ config.action_mailer.smtp_settings = {
   :domain    => 'highsandlows.us',
   :address   => 'smtp.sendgrid.net',
   :port      => 587,
-  :authentication => :login,
+  :authentication => :plain,
   :enable_starttls_auto => true
 }

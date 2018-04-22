@@ -68,3 +68,4 @@ gem 'refills', group: [:development, :test]
 gem 'devise_token_auth'
 gem 'rack-cors'
 gem 'sendgrid-ruby'
+gem 'smtpapi'
