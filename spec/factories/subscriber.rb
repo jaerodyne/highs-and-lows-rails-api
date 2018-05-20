@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :subscriber do
-    email "MyString"
+    email "user@example.com"
   end
 end
