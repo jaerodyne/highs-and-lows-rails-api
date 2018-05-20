@@ -33,16 +33,5 @@ module HighsAndLowsRails
 				resource '*', :headers => :any, :methods => [:get, :post, :options]
 			end
 		end
-
-		# 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
-		# ActionMailer::Base.smtp_settings = {
-		# 	user_name: ENV['SENDGRID_USERNAME']
-		# 	password: ENV['SENDGRID_PASSWORD'],
-		# 	domain: ENV['SMTP_DOMAIN'],
-		# 	address: ENV['SMTP_ADDRESS'],
-		# 	port: 587,
-		# 	authentication: :plain,
-		# 	enable_starttls_auto: true
-		# }
 	end
 end
