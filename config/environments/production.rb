@@ -35,10 +35,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: ENV["APPLICATION_HOST"] }
   config.action_mailer.asset_host = { host: ENV.fetch("ASSET_HOST", ENV["APPLICATION_HOST"]) }
   config.force_ssl = true
+  config.action_mailer.delivery_method = :smtp
 end
 Rack::Timeout.timeout = (ENV["RACK_TIMEOUT"] || 10).to_i
 
-config.action_mailer.delivery_method = :smtp
 # SMTP settings for gmail
 # config.action_mailer.smtp_settings = {
 #  :address              => "smtp.gmail.com",
