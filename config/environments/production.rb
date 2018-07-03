@@ -8,7 +8,7 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.assets.js_compressor = :uglifier
   config.assets.compile = false
-  config.action_controller.asset_host = ENV.fetch("ASSET_HOST", ENV.fetch("APPLICATION_HOST"))
+  config.action_controller.asset_host = ENV.fetch("ASSET_HOST", ENV["APPLICATION_HOST"])
   config.log_level = :debug
   config.log_tags = [ :request_id ]
   config.action_mailer.perform_caching = false
@@ -50,12 +50,12 @@ config.action_mailer.delivery_method = :smtp
 # :enable_starttls_auto => true
 # }
 
-config.action_mailer.smtp_settings = {
-  :user_name => ENV['SENDGRID_USERNAME'],
-  :password  => ENV['SENDGRID_PASSWORD'],
-  :domain    => 'highsandlows.us',
-  :address   => 'smtp.sendgrid.net',
-  :port      => 587,
-  :authentication => :plain,
-  :enable_starttls_auto => true
-}
+# config.action_mailer.smtp_settings = {
+#   :user_name => ENV['SENDGRID_USERNAME'],
+#   :password  => ENV['SENDGRID_PASSWORD'],
+#   :domain    => 'highsandlows.us',
+#   :address   => 'smtp.sendgrid.net',
+#   :port      => 587,
+#   :authentication => :plain,
+#   :enable_starttls_auto => true
+# }
