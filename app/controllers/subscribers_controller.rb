@@ -4,7 +4,7 @@ class SubscribersController < ApplicationController
   before_action :set_subscriber, only: [:show, :update, :destroy]
   protect_from_forgery with: :null_session, if: Proc.new {|c| c.request.format.json? }
   skip_before_action :verify_authenticity_token, only: [:index]
-  http_basic_authenticate_with name: ENV['API_USERNAME'], password: ENV['API_PASSWORD']
+  # http_basic_authenticate_with name: ENV['API_USERNAME'], password: ENV['API_PASSWORD']
 
   # GET /subscribers
   def index
